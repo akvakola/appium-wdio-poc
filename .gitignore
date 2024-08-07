@@ -8,3 +8,6 @@ allure-results/
 # App files
 app/android/*
 app/ios/*
+
+# macOS Finder settings
+.DS_Store
