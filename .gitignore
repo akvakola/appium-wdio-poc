@@ -1,0 +1,10 @@
+# Node.js dependencies
+node_modules/
+
+# Test reports
+allure-report/
+allure-results/
+
+# App files
+app/android/
+app/ios/
