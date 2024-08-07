@@ -6,5 +6,5 @@ allure-report/
 allure-results/
 
 # App files
-app/android/
-app/ios/
+app/android/*
+app/ios/*
