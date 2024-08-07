@@ -5,9 +5,20 @@ node_modules/
 allure-report/
 allure-results/
 
-# App files
+# Ignore all files in the app directory
+app/*
+
+# Except for the android and ios directories
+!app/android/
+!app/ios/
+
+# Ignore everything inside the android and ios directories
 app/android/*
 app/ios/*
+
+# Allow the directories themselves to be tracked
+!app/android/.gitkeep
+!app/ios/.gitkeep
 
 # macOS Finder settings
 .DS_Store
