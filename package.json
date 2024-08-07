@@ -18,7 +18,8 @@
     "typescript": "^5.5.2"
   },
   "scripts": {
-    "test": "npm run check-port && rm -rf allure-results && npx wdio ./cfg/wdio.shared2.conf.js",
+    "test-ios": "npm run check-port && rm -rf allure-results && npx wdio ./cfg/wdio.ios.conf.js",
+    "test-android": "npm run check-port && rm -rf allure-results && npx wdio ./cfg/wdio.android.conf.js",
     "report": "npx allure open -h localhost -p 8081",
     "appium": "appium",
     "inspector": "appium -p 4724",
