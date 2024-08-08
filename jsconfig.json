@@ -2,7 +2,12 @@
   "compilerOptions": {
     "target": "es6",
     "module": "CommonJS",
-    "types": ["node", "@wdio/globals/types", "@wdio/mocha-framework"]
+    "types": [
+      "node",
+      "@wdio/globals/types",
+      "@wdio/mocha-framework",
+      "@wdio/visual-service"
+    ]
   },
   "exclude": ["node_modules"]
 }

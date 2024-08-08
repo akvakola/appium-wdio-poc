@@ -3,7 +3,7 @@ import { default as homePage } from "../../screenobjects/android/home.page.js";
 
 // EXAMPLE
 describe("Android tests", () => {
-  it("Verify accessibility id is displayed", async () => {
+  it("Verify android il loaded", async () => {
     // const accessibilityID = $("~Accessibility");
     // await expect(accessibilityID).toBeDisplayed();
     // // OR PAGE OBJECT MODEL

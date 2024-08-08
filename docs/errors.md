@@ -11,3 +11,11 @@ lsof -i :4723
 kill -9 {processnumber}
 
 ```
+
+##### Error: Unable to load spec files quite likely because they rely on `browser` object that is not fully initialized.`browser` object has only `capabilities` and some flags like `isMobile`.Helper files that use other `browser` commands have to be moved to `before` hook.Error: Error: Cannot find module '/Users/viktornovacki/Appium/POC/appium-wdio-poc/test/utils/visual-regression' imported from /Users/viktornovacki/Appium/POC/appium-wdio-poc/test/specs/ios/ios.spec.js
+
+### Solution:
+
+```
+Missing .js extension in an import statement.
+```

@@ -22,3 +22,4 @@ app/ios/*
 
 # macOS Finder settings
 .DS_Store
+tmp
