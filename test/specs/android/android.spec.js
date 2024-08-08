@@ -1,5 +1,5 @@
 //Always add .js at the end of the import or the tests are going to fail
-import { default as homePage } from "../../screenobjects/android/home.page.js";
+import { default as homePage } from "../../screen-objects/android/home.page.js";
 
 // EXAMPLE
 describe("Android tests", () => {
