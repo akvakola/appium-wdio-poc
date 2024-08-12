@@ -62,8 +62,9 @@ This folder is used for storing baseline images and results for visual regressio
 
 ## Running and Debugging
 
-- **Running Tests in Headless Mode**: By default, tests can be configured to run in headless mode for optimization.
-- **Local Debugging and Development**: For local debugging, use the appropriate tools and configurations provided by WebdriverIO and Appium.
+- **For Android**: The Virtual Device should be running (Android Studio > More Actions > Virtual Device Manager > Select Virtual Device and click the `START` button )
+- **For iOS**: Xcode should be running
+
 - **Running Tests**: Use the following npm scripts to run tests:
   - `test-ios`: Runs iOS tests.
   - `test-android`: Runs Android tests.
@@ -86,6 +87,7 @@ Here are the npm scripts defined in the `package.json` file:
   "check-port": "./check-port.sh 4723"
 }
 ```
+
 // If the check-port.sh is unable to run on your machine, you might need to give it executable permissions by using "chmod +x check-port.sh" (run this in the root of the project)
 
 ## Example Usage
@@ -96,4 +98,26 @@ To run the iOS tests, use the following command:
 npm run test-ios
 ```
 
-// TODO add best practices for organising and writing test cases.
+## Best practices
+
+When structuring test automation, it’s essential to maintain clarity, simplicity, and modularity to ensure that the tests are easy to understand, maintain, and extend. A well-organized architecture with clear boundaries for each test file and suite is critical. Below are the best practices for test writing and architecture, particularly when limiting each test suite (`describe` block) to a maximum of 10 test cases and restricting one `describe` block per file.
+
+### 1. Modular Test Suites
+
+`Single describe per File:` Each file should contain only one `describe` block. This approach ensures that each file is dedicated to testing a specific module, feature, or component, making it easier to locate and manage tests related to that functionality.
+Focused Test Suites: Limit each `describe` block to `no more than 10 test case`s. This restriction encourages creating concise and focused test suites, which are easier to maintain and understand.
+
+### 2. File Naming Conventions
+
+`Descriptive File Names:` Use descriptive and consistent naming conventions for test files that reflect the functionality or module being tested. For example, `user-authentication.spec.js` or `checkout-process.spec.js.`
+`Directory Structure:` Organize test files into directories that mirror the structure of your application’s components or features. This makes it easier to navigate and manage the test suite as it grows.
+
+### 3. Clear Test Case Definitions
+
+`Single Responsibility:` Each test case should test a single piece of functionality or a specific behavior. Avoid combining multiple assertions in one test case, as this can make failures harder to diagnose.
+`Test Case Naming:` Use meaningful names for test cases that clearly describe the expected behavior. For example, `it('should display an error message for invalid login credentials')` is more descriptive than `it('should handle login error')`.
+
+### 4. Logical Grouping and Sequencing
+
+`Group Related Tests:` Within the `describe` block, group related test cases together logically. For example, group tests that validate form inputs separately from tests that validate form submission.
+`Sequential Execution:` Ensure that the sequence of test cases within a describe block makes logical sense. If possible, structure tests so that they flow from setup to validation without unnecessary dependencies.

@@ -1,5 +1,6 @@
 import { config } from "../cfg/wdio.shared.conf.js";
 import path from "path";
+import { env } from "../env.js";
 
 //
 // ============
@@ -15,15 +16,15 @@ config.specs = [
 // ============
 config.capabilities = [
   {
-    // capabilities for local Appium web tests on an Android Emulator
+    // capabilities for local Appium web tests on an Android Simulator
     "appium:platformName": "ios",
-    // TODO - dodaj upute za kompajliranje app-a za odredjeni uredjaj/emulator (app, ipa, itd...)
+    // Make sure that in your XCode the same Device Type is installed as in the appium:deviceName value
+    // Make sure in your XCode the OS Version is installed on the Device
+    // Steps: Open Xcode, select Window > Devices and Simulators, click the "+" button in the bottom and add the Name, Type and OS Version
     "appium:deviceName": "iPhone 15",
-    // TODO - dodaj upute za iOS verzije kod kompajliranja
     "appium:platformVersion": "17.5",
     "appium:automationName": "XCUITest",
-    // TODO - parametrizirat ime aplikacije iz nekog prikladnog env fajla
-    "appium:app": path.join(process.cwd(), "app/ios/RosettaStoneLanguages.app"),
+    "appium:app": path.join(process.cwd(), `app/ios/${env.iOsApp}`),
     "appium:options": {
       autoAcceptAlerts: true, // Automatically accept alerts
       autoDismissAlerts: false, // Automatically dismiss alerts (set to true if you want to dismiss)

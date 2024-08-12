@@ -13,3 +13,5 @@ reporters: [
     ],
   ],
 `
+
+#### For taking screenshots a method was created in the ./utils/visual-regression.js file. Just add the await checkScreen(imageNameHere) and import the file. import { checkScreen } from "../../utils/visual-regression.js"; like this
