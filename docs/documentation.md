@@ -86,6 +86,7 @@ Here are the npm scripts defined in the `package.json` file:
   "check-port": "./check-port.sh 4723"
 }
 ```
+// If the check-port.sh is unable to run on your machine, you might need to give it executable permissions by using "chmod +x check-port.sh" (run this in the root of the project)
 
 ## Example Usage
 
@@ -94,3 +95,5 @@ To run the iOS tests, use the following command:
 ```sh
 npm run test-ios
 ```
+
+// TODO add best practices for organising and writing test cases.

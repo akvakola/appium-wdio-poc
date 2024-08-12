@@ -45,6 +45,9 @@ export const config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
+
+  // TODO - istrazi ovaj broj za lokalno pokretanje vs pokretanje na DeviceCloud-u
+
   maxInstances: 10,
   //
   // If you have trouble getting all important capabilities together, check out the
@@ -269,7 +272,7 @@ export const config = {
   afterTest: async function (
     test,
     context,
-    { error, result, duration, passed, retries }
+    { error, result, duration, passed, retries },
   ) {
     if (error) {
       const timestamp = new Date().toISOString().replace(/:/g, "-");
