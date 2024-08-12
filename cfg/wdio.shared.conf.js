@@ -107,7 +107,7 @@ export const config = {
       "visual",
       {
         isHybridApp: true,
-        baselineFolder: path.join(process.cwd(), "tests", "baseline"),
+        baselineFolder: path.join(process.cwd(), "screens", "baseline"),
         formatImageName: "{tag}-{logName}-{width}x{height}",
         screenshotPath: path.join(process.cwd(), "tmp"),
         savePerInstance: true,
@@ -272,7 +272,7 @@ export const config = {
   afterTest: async function (
     test,
     context,
-    { error, result, duration, passed, retries },
+    { error, result, duration, passed, retries }
   ) {
     if (error) {
       const timestamp = new Date().toISOString().replace(/:/g, "-");
