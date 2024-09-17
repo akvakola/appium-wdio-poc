@@ -48,7 +48,7 @@ export const config = {
 
   // TODO - istrazi ovaj broj za lokalno pokretanje vs pokretanje na DeviceCloud-u
 
-  maxInstances: 1,
+  maxInstances: 10,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -61,7 +61,7 @@ export const config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "error",
+  logLevel: "info",
   //
   // Set specific log levels per logger
   // loggers:
@@ -79,7 +79,7 @@ export const config = {
   //
   // If you only want to run your tests until a specific amount of tests have failed use
   // bail (default is 0 - don't bail, run all tests).
-  bail: 3,
+  bail: 0,
   //
   // Set a base URL in order to shorten url command calls. If your `url` parameter starts
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
@@ -92,7 +92,7 @@ export const config = {
   //
   // Default timeout in milliseconds for request
   // if browser driver or grid doesn't send response
-  connectionRetryTimeout: 180000,
+  connectionRetryTimeout: 120000,
   //
   // Default request retries count
   connectionRetryCount: 3,
@@ -138,13 +138,13 @@ export const config = {
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
   reporters: [
-    ["spec", { realtimeReporting: true }],
+    "spec",
     [
       "allure",
       {
         outputDir: "allure-results",
         disableWebdriverStepsReporting: false,
-        disableWebdriverScreenshotsReporting: false,
+        disableWebdriverScreenshotsReporting: true,
       },
     ],
   ],
@@ -287,7 +287,7 @@ export const config = {
   },
   mochaOpts: {
     ui: "bdd",
-    timeout: 600000, // Increase Mocha timeout to 60 seconds
+    timeout: 60000, // Increase Mocha timeout to 60 seconds
   },
   /**
    * Hook that gets executed after the suite has ended
